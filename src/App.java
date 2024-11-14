@@ -77,14 +77,14 @@ public class App {
                 long endTimeBurbuja10000 = System.nanoTime();
                 double duration10000 = (endTimeBurbuja10000 - startTimeBurbuja10000)/1e+9;
                 System.out.println(" Duracion de ejecucion en segundos: "+ formato.format(duration10000) + " s");
-                /* 
+                
                 System.out.println(" Lista de  30000: ");
                 long startTimeBurbuja30000 = System.nanoTime();
                 ArrayList<Integer> lista5Burbuja = ordenar.burbuja(lista5);
                 long endTimeBurbuja30000 = System.nanoTime();
                 double duration30000 = (endTimeBurbuja30000 - startTimeBurbuja30000)/1e+9;
                 System.out.println(" Duracion de ejecucion en segundos: "+ formato.format(duration30000) + " s");
-                */
+                
                 System.out.println("                      *****ORDENAMIENTO:  BURBUJA AJUSTE*****            ");
     
                 System.out.println(" Lista de 10 : ");
@@ -121,14 +121,14 @@ public class App {
                 long endTimeAjuste10000 = System.nanoTime();
                 double durationAjuste10000 = (endTimeAjuste10000 - startTimeAjuste10000)/1e+9;
                 System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationAjuste10000) + " s");
-                /* 
+                
                 System.out.println(" Lista de 30000 : ");
                 long startTimeAjuste30000 = System.nanoTime();
                 ArrayList<Integer> lista5Ajuste = ordenar.burbuja(lista5);
                 long endTimeAjuste30000 = System.nanoTime();
                 double durationAjuste30000 = (endTimeAjuste30000 - startTimeAjuste30000)/1e+9;
                 System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationAjuste30000) + " s");
-                */
+                
                 System.out.println("                      *****ORDENAMIENTO:  SELECCION*****            ");
     
                 System.out.println(" Lista de 10 : ");
@@ -165,14 +165,14 @@ public class App {
                 long endTimeSelec10000 = System.nanoTime();
                 double durationSelec10000 = (endTimeSelec10000 - startTimeSelec10000)/1e+9;
                 System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationSelec10000) + " s");
-                /* 
+                 
                 System.out.println(" Lista de 30000 : ");
                 long startTimeSelec30000 = System.nanoTime();
                 ArrayList<Integer> lista5Selec = ordenar.seleccion(lista5);
                 long endTimeSelec30000 = System.nanoTime();
                 double durationSelec30000 = (endTimeSelec30000 - startTimeSelec30000)/1e+9;
                 System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationSelec30000) + " s");
-                */
+                
                 System.out.println("                      *****ORDENAMIENTO:  INSERCION*****            ");
     
                 System.out.println(" Lista de 10 : ");
@@ -209,20 +209,166 @@ public class App {
                 long endTimeIn10000  = System.nanoTime();
                 double durationIn10000  = (endTimeIn10000  - startTimeIn10000)/1e+9;
                 System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationIn10000) + " s");
-            /* 
-            System.out.println(" Lista de 30000 : ");
-            long startTimeIn30000  = System.nanoTime();
-            ArrayList<Integer> lista5In = ordenar.insercion(lista5);
-            long endTimeIn30000  = System.nanoTime();
-            double durationIn30000  = (endTimeIn30000  - startTimeIn30000)/1e+9;
-            System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationIn30000) + " s");
-            */
+                
+                System.out.println(" Lista de 30000 : ");
+                long startTimeIn30000  = System.nanoTime();
+                ArrayList<Integer> lista5In = ordenar.insercion(lista5);
+                long endTimeIn30000  = System.nanoTime();
+                double durationIn30000  = (endTimeIn30000  - startTimeIn30000)/1e+9;
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationIn30000) + " s");
+            
                 break;
             case 2:
 
                 System.out.println("                      *****BUSQUEDA BINARIA : SIN RECURSIVIDAD*****            ");
                 System.out.println("Escribe el numero que quieras buscar en las 6 listas");
                 int buscar = leer.nextInt();
+                System.out.println("GENERANO LISTAS ORDENADAS DE TAMAÑO 10............");
+                ArrayList<Integer> rA10 = ordenar.insercion(lista0);
+                System.out.println("finalizado");
+                System.out.println("GENERANO LISTAS ORDENADAS DE TAMAÑO 100............");
+                ArrayList<Integer> rA100 = ordenar.insercion(lista1);
+                System.out.println("finalizado");
+                System.out.println("GENERANO LISTAS ORDENADAS DE TAMAÑO 1000............");
+                ArrayList<Integer> rA1000 = ordenar.insercion(lista2);
+                System.out.println("finalizado");
+                System.out.println("GENERANO LISTAS ORDENADAS DE TAMAÑO 5000............");
+                ArrayList<Integer> rA5000 = ordenar.insercion(lista3);
+                System.out.println("finalizado");
+                System.out.println("GENERANO LISTAS ORDENADAS DE TAMAÑO 10000............");
+                ArrayList<Integer> rA10000 = ordenar.insercion(lista4);
+                System.out.println("finalizado");
+                System.out.println("GENERANO LISTAS ORDENADAS DE TAMAÑO 30000............");
+                ArrayList<Integer> rA30000 = ordenar.insercion(lista5);
+                System.out.println("finalizado");
+
+
+                System.out.println("Lista de 10 : ");
+                long starTime10 = System.nanoTime();
+                int rN10 = ordenar.busquedaBinaria(rA10, buscar);
+                long endTime10 = System.nanoTime();
+                double durationTime10  = (endTime10  - starTime10 )/1e+9;
+                if(rN10 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTime10) + " s");
+
+                
+                System.out.println("Lista de 100 : ");
+                long starTime100 = System.nanoTime();
+                int rN100 = ordenar.busquedaBinaria(rA100, buscar);
+                long endTime100 = System.nanoTime();
+                double durationTime100  = (endTime100  - starTime100 )/1e+9;
+                if(rN100 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTime100) + " s");
+
+                System.out.println("Lista de 1000 : ");
+                long starTime1000 = System.nanoTime();
+                int rN1000 = ordenar.busquedaBinaria(rA1000, buscar);
+                long endTime1000 = System.nanoTime();
+                double durationTime1000  = (endTime1000  - starTime1000 )/1e+9;
+                if(rN1000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTime1000) + " s");
+
+                System.out.println("Lista de 5000 : ");
+                long starTime5000 = System.nanoTime();
+                int rN5000 = ordenar.busquedaBinaria(rA5000, buscar);
+                long endTime5000 = System.nanoTime();
+                double durationTime5000  = (endTime5000  - starTime5000)/1e+9;
+                if(rN5000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTime5000) + " s");
+
+                System.out.println("Lista de 10000 : ");
+                long starTime10000 = System.nanoTime();
+                int rN10000 = ordenar.busquedaBinaria(rA10000 , buscar);
+                long endTime10000  = System.nanoTime();
+                double durationTime10000 = (endTime10000   - starTime10000  )/1e+9;
+                if(rN10000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTime10000 ) + " s");
+
+                System.out.println("Lista de 30000 : ");
+                long starTime30000 = System.nanoTime();
+                int rN30000 = ordenar.busquedaBinaria(rA30000 , buscar);
+                long endTime30000  = System.nanoTime();
+                double durationTime30000 = (endTime30000   - starTime30000  )/1e+9;
+                if(rN30000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTime30000 ) + " s");
+
+                System.out.println("                      *****BUSQUEDA BINARIA : CON RECURSIVIDAD*****            ");
+
+                System.out.println("Lista de 10 : ");
+                long starTimez10 = System.nanoTime();
+                int rNz10 = ordenar.busquedaBinariaR(rA10, buscar);
+                long endTimez10 = System.nanoTime();
+                double durationTimez10  = (endTimez10  - starTimez10)/1e+9;
+                if(rNz10 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTimez10) + " s");
+                
+                System.out.println("Lista de 100 : ");
+                long starTimez100 = System.nanoTime();
+                int rNz100 = ordenar.busquedaBinariaR(rA100, buscar);
+                long endTimez100 = System.nanoTime();
+                double durationTimez100  = (endTimez100  - starTimez100)/1e+9;
+                if(rNz100 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTimez100) + " s");
+                
+
+                System.out.println("Lista de 1000 : ");
+                long starTimez1000 = System.nanoTime();
+                int rNz1000 = ordenar.busquedaBinariaR(rA1000, buscar);
+                long endTimez1000 = System.nanoTime();
+                double durationTimez1000  = (endTimez1000  - starTimez1000)/1e+9;
+                if(rNz1000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTimez1000) + " s");
+
+                
+                System.out.println("Lista de 5000 : ");
+                long starTimez5000 = System.nanoTime();
+                int rNz5000 = ordenar.busquedaBinariaR(rA5000, buscar);
+                long endTimez5000 = System.nanoTime();
+                double durationTimez5000  = (endTimez5000  - starTimez5000)/1e+9;
+                if(rNz5000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTimez5000) + " s");
+
+                System.out.println("Lista de 10000 : ");
+                long starTimez10000 = System.nanoTime();
+                int rNz10000 = ordenar.busquedaBinariaR(rA10000, buscar);
+                long endTimez10000 = System.nanoTime();
+                double durationTimez10000  = (endTimez10000  - starTimez10000)/1e+9;
+                if(rNz10000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTimez10000) + " s");
+
+                System.out.println("Lista de 30000 : ");
+                long starTimez30000 = System.nanoTime();
+                int rNz30000 = ordenar.busquedaBinariaR(rA30000, buscar);
+                long endTimez30000 = System.nanoTime();
+                double durationTimez30000  = (endTimez30000  - starTimez30000)/1e+9;
+                if(rNz30000 == -1){
+                    System.out.println("No encontrado");
+                }
+                System.out.println(" Duracion de ejecucion en segundos : " + formato.format(durationTimez30000) + " s");
+
+                
                 
                 break;
             default:

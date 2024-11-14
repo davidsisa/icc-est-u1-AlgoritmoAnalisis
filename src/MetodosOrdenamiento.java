@@ -98,4 +98,28 @@ public class MetodosOrdenamiento {
         }   
         return -1; 
     }
+
+    public int busquedaBinariaR(ArrayList<Integer> arreglo, int z) {
+
+        return busquedaBinariaR1(arreglo, z, 0, arreglo.size() - 1);
+    }
+    
+    private int busquedaBinariaR1(ArrayList<Integer> arreglo, int z, int i, int f) {
+        if (i > f) {
+            return -1;
+        }
+    
+        int medio = i + (f - i) / 2;
+    
+        if (arreglo.get(medio) == z) {
+            return medio;
+        }
+    
+        if (arreglo.get(medio) < z) {
+            return busquedaBinariaR1(arreglo, z, medio + 1, f);
+        } 
+        else {
+            return busquedaBinariaR1(arreglo, z, i, medio - 1);
+        }
+    }
 }
